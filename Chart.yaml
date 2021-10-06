@@ -1,0 +1,19 @@
+apiVersion: v2
+
+type: application
+appVersion: "latest"
+version: 0.1.3
+name: mautrix-facebook
+description: A Matrix-Facebook puppeting bridge
+keywords:
+  - synapse
+  - chat
+  - matrix
+  - bridge
+  - facebook
+home: https://matrix.org/docs/projects/bridge/mautrix-facebook/
+sources:
+  - https://github.com/mautrix/facebook
+maintainers:
+  - name: Silvio Ankermann
+    email: silvio@booq.org

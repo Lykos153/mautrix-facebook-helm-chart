@@ -1,0 +1,19 @@
+{{- if .Values.config }}
+{{- if .Values.config.appservice }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "mautrix-facebook.fullname" . }}
+  labels:
+{{ include "mautrix-facebook.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ required "need config.appservice.port" .Values.config.appservice.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "mautrix-facebook.selectorLabels" . | nindent 4 }}
+{{- end }}
+{{- end }}
